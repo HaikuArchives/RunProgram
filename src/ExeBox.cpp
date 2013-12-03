@@ -13,6 +13,8 @@
 #include <VolumeRoster.h>
 #include <Query.h>
 
+#include <stdio.h>
+
 static BObjectList<entry_ref> *sPathData = NULL;
 BLocker sPathDataLock;
 thread_id sThreadID = -1;
