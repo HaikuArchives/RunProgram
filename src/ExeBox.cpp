@@ -13,6 +13,8 @@
 #include <VolumeRoster.h>
 #include <Query.h>
 
+#include <stdio.h>
+
 static BObjectList<entry_ref> *sPathData = NULL;
 BLocker sPathDataLock;
 thread_id sThreadID = -1;
@@ -212,7 +214,7 @@ ExeBox::InitializeAutocompletion(void)
 			sPathData->AddItem(new entry_ref(ref));
 	}
 	
-	find_directory(B_COMMON_BIN_DIRECTORY,&path);
+	find_directory(B_SYSTEM_BIN_DIRECTORY,&path);
 	dir.SetTo(path.Path());
 	dir.Rewind();
 	while (dir.GetNextRef(&ref) == B_OK)
@@ -271,7 +273,7 @@ ExeBox::QueryThread(void *data)
 	{
 		if ( ref.directory == B_USER_ADDONS_DIRECTORY 
 			|| ref.directory == B_BEOS_ADDONS_DIRECTORY
-			|| ref.directory == B_COMMON_ADDONS_DIRECTORY)
+			|| ref.directory == B_SYSTEM_ADDONS_DIRECTORY)
 			continue;
 
 		if (ref.directory == -1)
@@ -341,7 +343,7 @@ ExeBox::UpdateThread(void *data)
 		queryList.AddItem(new entry_ref(ref));
 	}
 	
-	find_directory(B_COMMON_BIN_DIRECTORY,&path);
+	find_directory(B_SYSTEM_BIN_DIRECTORY,&path);
 	dir.SetTo(path.Path());
 	dir.Rewind();
 
