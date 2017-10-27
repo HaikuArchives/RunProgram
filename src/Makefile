@@ -36,11 +36,11 @@ SRCS =  AutoTextControl.cpp \
 
 #	Specify the resource definition files to use. Full or relative paths can be
 #	used.
-RDEFS = 
+RDEFS = RunProgram.rdef
 
 #	Specify the resource files to use. Full or relative paths can be used.
 #	Both RDEFS and RSRCS can be utilized in the same Makefile.
-RSRCS = RunProgram.rsrc
+RSRCS = 
 
 # End Pe/Eddie support.
 # @<-src@ 

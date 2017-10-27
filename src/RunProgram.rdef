@@ -65,10 +65,7 @@ resource app_version {
 	variety = B_APPV_GAMMA,
 	internal = 1,
 
-	short_info = "Windows-like command runner",
-	long_info = #'CSTR' array {
-
-	}
+	short_info = "Windows-like command runner"
 };
 
 resource app_flags B_MULTIPLE_LAUNCH | B_BACKGROUND_APP;
